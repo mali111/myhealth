@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <div th:replace="header" :: myheader></div>
+</head>
+
+<body>
+<div class="row">
+  <div class="col-md-12" th:replace="navbar" :: mynavbar></div>
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <div class="card text-white bg-info">
+      <div class="card-body">
+        <h5 class="card-title" th:text="'Welcome '+ ${firstName} +' '+ ${lastName}">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk
+          of the card's content.</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item overview-card-info" th:text="'Age:'+ ${age}"></li>
+        <li class="list-group-item overview-card-info" th:text="'Gender:'+ ${gender}"></li>
+        <li class="list-group-item overview-card-info" th:text="'Weight:'+ ${weight}"></li>
+        <li class="list-group-item overview-card-info" th:text="'BloodGroup:'+ ${bloodGroup}"></li>
+        <li class="list-group-item overview-card-info" th:text="'Pregnant:'+ ${pregnant}"></li>
+        <li class="list-group-item overview-card-info" th:text="'OrganDonor:'+ ${organDonor}"></li>
+        <li class="list-group-item overview-card-info" th:text="'Smoker:'+ ${smoker}"></li>
+        <li class="list-group-item overview-card-info" th:text="'Insured at:'+ ${insurance}"></li>
+        <li class="list-group-item overview-card-info"
+            th:text="'Additional info: '+ ${additionalInfo}"></li>
+        <li class="list-group-item overview-card-info" th:text="'Allergies: '"></li>
+        <li class="list-group-item overview-card-info" th:text="'Diseases: '"></li>
+      </ul>
+      <div class="card-body">
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card text-white bg-warning">
+      <div class="card-body">
+        <h5 class="card-title"
+            th:text="'Medication list for '+ ${firstName} +' '+ ${lastName}"></h5>
+        <p class="card-text">Below you can see the active medication list.</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item overview-card-warning"
+            th:text="'Ibuflam Ibuprofen Dosis: 3 times a day'"></li>
+        <li class="list-group-item overview-card-warning"
+            th:text="'Paracetamol Panadol: 2 times a day'"></li>
+        <li class="list-group-item overview-card-warning"
+            th:text="'Aspirin  Ibuprofen Acetylsalicyls�ure: 1 times a day'"></li>
+        <li class="list-group-item overview-card-warning"
+            th:text="'Ibuflam Ibuprofen Dosis: 3 times a day'"></li>
+        <li class="list-group-item overview-card-warning"
+            th:text="'Paracetamol Panadol: 2 times a day'"></li>
+        <li class="list-group-item overview-card-warning"
+            th:text="'Aspirin  Ibuprofen Acetylsalicyls�ure: 1 times a day'"></li>
+        <li class="list-group-item overview-card-warning"
+            th:text="'Ibuflam Ibuprofen Dosis: 3 times a day'"></li>
+        <li class="list-group-item overview-card-warning"
+            th:text="'Paracetamol Panadol: 2 times a day'"></li>
+        <li class="list-group-item overview-card-warning"
+            th:text="'Aspirin  Ibuprofen Acetylsalicyls�ure: 1 times a day'"></li>
+      </ul>
+      <div class="card-body">
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="card text-white bg-danger">
+      <div class="card-body">
+        <h5 class="card-title" th:text="'Todo list for '+ ${firstName} +' '+ ${lastName}">Card
+          title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk
+          of the card's content.</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item overview-card-danger" th:text="'visit Dentist:'"></li>
+        <li class="list-group-item overview-card-danger" th:text="'visit Gynacologist:'"></li>
+        <li class="list-group-item overview-card-danger" th:text="'Long Term Medication'"></li>
+        <li class="list-group-item overview-card-danger" th:text="'upcoming Vaccination'"></li>
+        <li class="list-group-item overview-card-danger" th:text="'Long Term Medication'"></li>
+        <li class="list-group-item overview-card-danger" th:text="'Long Term Medication'"></li>
+        <li class="list-group-item overview-card-danger" th:text="'Long Term Medication'"></li>
+        <li class="list-group-item overview-card-danger" th:text="'Long Term Medication'"></li>
+        <li class="list-group-item overview-card-danger" th:text="'Long Term Medication'"></li>
+        <li class="list-group-item overview-card-danger" th:text="'Long Term Medication'"></li>
+        <li class="list-group-item overview-card-danger" th:text="'Long Term Medication'"></li>
+      </ul>
+      <div class="card-body">
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+<div class="row">
+  <div th:replace="footer" :: myfooter></div>
+</div>
+</body>
+</html>
