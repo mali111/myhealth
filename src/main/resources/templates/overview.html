@@ -44,23 +44,27 @@
       </div>
       <ul class="list-group list-group-flush">
         <li class="list-group-item overview-card-warning"
-            th:text="'Ibuflam Ibuprofen Dosis: 3 times a day'"></li>
+            th:text="${medicationName} + ' ' + ${medicationActiveIngredient} + ' ' + 'Dosis: '+ ${medicationDosage}"></li>
         <li class="list-group-item overview-card-warning"
-            th:text="'Paracetamol Panadol: 2 times a day'"></li>
+            th:text="${medicationName} + ' ' + ${medicationActiveIngredient} + ' ' + 'Dosis: '+ ${medicationDosage}"></li>
         <li class="list-group-item overview-card-warning"
-            th:text="'Aspirin  Ibuprofen Acetylsalicyls�ure: 1 times a day'"></li>
+            th:text="${medicationName} + ' ' + ${medicationActiveIngredient} + ' ' + 'Dosis: '+ ${medicationDosage}"></li>
         <li class="list-group-item overview-card-warning"
-            th:text="'Ibuflam Ibuprofen Dosis: 3 times a day'"></li>
+            th:text="${medicationName} + ' ' + ${medicationActiveIngredient} + ' ' + 'Dosis: '+ ${medicationDosage}"></li>
         <li class="list-group-item overview-card-warning"
-            th:text="'Paracetamol Panadol: 2 times a day'"></li>
+            th:text="${medicationName} + ' ' + ${medicationActiveIngredient} + ' ' + 'Dosis: '+ ${medicationDosage}"></li>
         <li class="list-group-item overview-card-warning"
-            th:text="'Aspirin  Ibuprofen Acetylsalicyls�ure: 1 times a day'"></li>
+            th:text="${medicationName} + ' ' + ${medicationActiveIngredient} + ' ' + 'Dosis: '+ ${medicationDosage}"></li>
         <li class="list-group-item overview-card-warning"
-            th:text="'Ibuflam Ibuprofen Dosis: 3 times a day'"></li>
+            th:text="${medicationName} + ' ' + ${medicationActiveIngredient} + ' ' + 'Dosis: '+ ${medicationDosage}"></li>
         <li class="list-group-item overview-card-warning"
-            th:text="'Paracetamol Panadol: 2 times a day'"></li>
+            th:text="${medicationName} + ' ' + ${medicationActiveIngredient} + ' ' + 'Dosis: '+ ${medicationDosage}"></li>
         <li class="list-group-item overview-card-warning"
-            th:text="'Aspirin  Ibuprofen Acetylsalicyls�ure: 1 times a day'"></li>
+            th:text="${medicationName} + ' ' + ${medicationActiveIngredient} + ' ' + 'Dosis: '+ ${medicationDosage}"></li>
+        <li class="list-group-item overview-card-warning"
+            th:text="${medicationName} + ' ' + ${medicationActiveIngredient} + ' ' + 'Dosis: '+ ${medicationDosage}"></li>
+        <li class="list-group-item overview-card-warning"
+            th:text="${medicationName} + ' ' + ${medicationActiveIngredient} + ' ' + 'Dosis: '+ ${medicationDosage}"></li>
       </ul>
       <div class="card-body">
         <a href="#" class="btn btn-primary">Go somewhere</a>
@@ -95,6 +99,14 @@
     </div>
   </div>
 
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <div th:replace="appointment-overview-carousel" :: myappointment-overview-carousel></div>
+  </div>
+  <div class="col-md-6">
+    <div th:replace="appointment-overview-carousel" :: myappointment-overview-carousel></div>
+  </div>
 </div>
 <div class="row">
   <div th:replace="footer" :: myfooter></div>
