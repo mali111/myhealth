@@ -29,6 +29,7 @@ public class OverviewController {
     model.put("smoker", patient.isSmoker());
     model.put("insurance", patient.getInsurance());
     model.put("additionalInfo", patient.getAdditionalInfo());
+    // DrugIntollerance drugIntollerance = drug
 
     Medication medication = medicationRepository.findByPznNumber(0631340);
     model.put("medicationName", medication.getMedicationName().toString());

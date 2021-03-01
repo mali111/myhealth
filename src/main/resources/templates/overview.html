@@ -27,6 +27,23 @@
         <li class="list-group-item overview-card-info" th:text="'Insured at:'+ ${insurance}"></li>
         <li class="list-group-item overview-card-info"
             th:text="'Additional info: '+ ${additionalInfo}"></li>
+        <!--        <table>
+                  <thead>
+                  <tr>
+                    <th> Name </th>
+                    <th> Author </th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr th:if="${books.empty}">
+                    <td colspan="2"> No Books Available </td>
+                  </tr>
+                  <tr th:each="book : ${books}">
+                    <td><span th:text="${book.title}"> Title </span></td>
+                    <td><span th:text="${book.author}"> Author </span></td>
+                  </tr>
+                  </tbody>
+                </table>-->
         <li class="list-group-item overview-card-info" th:text="'Allergies: '"></li>
         <li class="list-group-item overview-card-info" th:text="'Diseases: '"></li>
       </ul>
@@ -81,16 +98,16 @@
           of the card's content.</p>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item overview-card-danger" th:text="'visit Dentist:'"></li>
-        <li class="list-group-item overview-card-danger" th:text="'visit Gynacologist:'"></li>
+        <li class="list-group-item overview-card-danger" th:text="'Visit Dentist:'"></li>
+        <li class="list-group-item overview-card-danger" th:text="'Visit Gynacologist:'"></li>
         <li class="list-group-item overview-card-danger" th:text="'Long Term Medication'"></li>
         <li class="list-group-item overview-card-danger" th:text="'upcoming Vaccination'"></li>
-        <li class="list-group-item overview-card-danger" th:text="'Long Term Medication'"></li>
-        <li class="list-group-item overview-card-danger" th:text="'Long Term Medication'"></li>
-        <li class="list-group-item overview-card-danger" th:text="'Long Term Medication'"></li>
-        <li class="list-group-item overview-card-danger" th:text="'Long Term Medication'"></li>
-        <li class="list-group-item overview-card-danger" th:text="'Long Term Medication'"></li>
-        <li class="list-group-item overview-card-danger" th:text="'Long Term Medication'"></li>
+        <li class="list-group-item overview-card-danger" th:text="'Eat Green'"></li>
+        <li class="list-group-item overview-card-danger" th:text="'Do Sports'"></li>
+        <li class="list-group-item overview-card-danger" th:text="'Work-life Balance'"></li>
+        <li class="list-group-item overview-card-danger" th:text="'Regular checkup'"></li>
+        <li class="list-group-item overview-card-danger" th:text="'Check Blood Pressure'"></li>
+        <li class="list-group-item overview-card-danger" th:text="'Keep an eye on your Sugar'"></li>
         <li class="list-group-item overview-card-danger" th:text="'Long Term Medication'"></li>
       </ul>
       <div class="card-body">

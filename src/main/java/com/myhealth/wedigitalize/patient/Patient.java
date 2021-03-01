@@ -1,15 +1,24 @@
 package com.myhealth.wedigitalize.patient;
 
+import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+@AllArgsConstructor
 @Data
 @Entity
 public class Patient {
-  @Id
-  @GeneratedValue
-  private long id;
+  @Id @GeneratedValue private long id;
   private String firstName;
   private String lastName;
   private String dob;
@@ -22,14 +31,28 @@ public class Patient {
   private boolean smoker;
   private String additionalInfo;
   private String insurance;
-//  private List allergies;
-  //public Disease diseases;
+  // private Vaccine vaccine;
+  // private Allergy allergy;
+  // public PreviousIllness previousIllness;
   // public Contact emergencyContact;
 
-  public Patient(String firstName, String lastName, String dob, String age,
-      String gender, String weight, boolean organDonor, String bloodGroup, boolean pregnant,
-      String additionalInfo,boolean smoker, String insurance) {
-    this.id = id;
+  @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+  @JoinColumn(name = "patientDrugIntollerance_fid", referencedColumnName = "id")
+  List<DrugIntollerance> drugIntollerances = new ArrayList<>();
+
+  public Patient(
+      String firstName,
+      String lastName,
+      String dob,
+      String age,
+      String gender,
+      String weight,
+      boolean organDonor,
+      String bloodGroup,
+      boolean pregnant,
+      String additionalInfo,
+      boolean smoker,
+      String insurance) {
     this.firstName = firstName;
     this.lastName = lastName;
     this.dob = dob;
@@ -43,6 +66,4 @@ public class Patient {
     this.smoker = smoker;
     this.insurance = insurance;
   }
-
-  public Patient(){}
 }
