@@ -27,23 +27,21 @@
         <li class="list-group-item overview-card-info" th:text="'Insured at:'+ ${insurance}"></li>
         <li class="list-group-item overview-card-info"
             th:text="'Additional info: '+ ${additionalInfo}"></li>
-        <!--        <table>
-                  <thead>
-                  <tr>
-                    <th> Name </th>
-                    <th> Author </th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <tr th:if="${books.empty}">
-                    <td colspan="2"> No Books Available </td>
-                  </tr>
-                  <tr th:each="book : ${books}">
-                    <td><span th:text="${book.title}"> Title </span></td>
-                    <td><span th:text="${book.author}"> Author </span></td>
-                  </tr>
-                  </tbody>
-                </table>-->
+        <table>
+          <thead>
+          <tr>
+            <th> Drug intollerances :</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr th:if="${drugIntollerances.empty}">
+            <td colspan="2"> No Intollerance Available</td>
+          </tr>
+          <tr th:each="drugIntollerance : ${drugIntollerances}">
+            <td><span th:text="${drugIntollerance.name}"> Name </span></td>
+          </tr>
+          </tbody>
+        </table>
         <li class="list-group-item overview-card-info" th:text="'Allergies: '"></li>
         <li class="list-group-item overview-card-info" th:text="'Diseases: '"></li>
       </ul>

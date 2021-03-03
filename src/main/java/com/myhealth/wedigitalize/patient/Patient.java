@@ -40,6 +40,10 @@ public class Patient {
   @JoinColumn(name = "patientDrugIntollerance_fid", referencedColumnName = "id")
   List<DrugIntollerance> drugIntollerances = new ArrayList<>();
 
+  /*  @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+  @JoinColumn(name = "patientcontact_fid", referencedColumnName = "id")
+  List<Contact> contacts = new ArrayList<>();*/
+
   public Patient(
       String firstName,
       String lastName,

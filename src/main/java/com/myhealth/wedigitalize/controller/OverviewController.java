@@ -3,19 +3,23 @@ package com.myhealth.wedigitalize.controller;
 import com.myhealth.wedigitalize.medication.Medication;
 import com.myhealth.wedigitalize.medication.repository.MedicationRepository;
 import com.myhealth.wedigitalize.patient.Patient;
+import com.myhealth.wedigitalize.patient.repository.DrugIntolleranceRepository;
 import com.myhealth.wedigitalize.patient.repository.PatientRepository;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class OverviewController {
   @Autowired PatientRepository patientRepository;
   @Autowired MedicationRepository medicationRepository;
+  @Autowired DrugIntolleranceRepository drugIntolleranceRepository;
 
   @GetMapping("overview")
-  public String getOverview(Map<String, Object> model) {
+  public String showAll(Map<String, Object> model, Model drugInt) {
+    // General Patient Data
     Patient patient = patientRepository.findById(2);
     model.put("firstName", patient.getFirstName().toString());
     model.put("lastName", patient.getLastName().toString());
@@ -29,8 +33,9 @@ public class OverviewController {
     model.put("smoker", patient.isSmoker());
     model.put("insurance", patient.getInsurance());
     model.put("additionalInfo", patient.getAdditionalInfo());
-    // DrugIntollerance drugIntollerance = drug
-
+    // drug Intollerance List
+    drugInt.addAttribute("drugIntollerances", drugIntolleranceRepository.findAll());
+    // Medication Data
     Medication medication = medicationRepository.findByPznNumber(0631340);
     model.put("medicationName", medication.getMedicationName().toString());
     model.put("medicationPZN", medication.getPznNumber());
@@ -41,6 +46,7 @@ public class OverviewController {
     model.put("medicationNotes", medication.getNotes().toString());
     model.put("medicationActive", medication.isActivate());
     model.put("medicationPrescriptionRequired", medication.isPrescriptionRequired());
+
     return "overview";
   }
 }
