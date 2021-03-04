@@ -5,8 +5,12 @@ import static java.lang.Boolean.TRUE;
 
 import com.myhealth.wedigitalize.medication.Medication;
 import com.myhealth.wedigitalize.medication.repository.MedicationRepository;
+import com.myhealth.wedigitalize.patient.Allergy;
+import com.myhealth.wedigitalize.patient.Contact;
 import com.myhealth.wedigitalize.patient.DrugIntollerance;
 import com.myhealth.wedigitalize.patient.Patient;
+import com.myhealth.wedigitalize.patient.PreviousIllness;
+import com.myhealth.wedigitalize.patient.Vaccine;
 import com.myhealth.wedigitalize.patient.repository.PatientRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -45,26 +49,46 @@ public class MyhealthApplication extends SpringBootServletInitializer {
               false,
               "Private");
       DrugIntollerance drugIntollerance = new DrugIntollerance("penicillin", "26.02.2020");
-      DrugIntollerance drugIntollerance1 = new DrugIntollerance("Lactonse", "2.02.2021");
+      DrugIntollerance drugIntollerance1 = new DrugIntollerance("Lactose", "2.02.2021");
 
       patient1.getDrugIntollerances().add(drugIntollerance);
       patient1.getDrugIntollerances().add(drugIntollerance1);
-      this.patientRepository.save(patient1);
 
-      repository.save(
-          new Patient(
-              "max",
-              "mustermann",
-              "2.02.1990",
-              "26",
-              "male",
-              "80kg",
-              TRUE,
-              "A+ve",
-              FALSE,
-              "No information",
-              false,
-              "Private"));
+      Contact contact =
+          new Contact(
+              "Khalid",
+              "Khan",
+              "01526548654",
+              "abc@gmail.com",
+              "street 123, city stuttgart, 71229");
+      Contact contact2 =
+          new Contact(
+              "Omar",
+              "Nadeem",
+              "015265445",
+              "abc@hotmail.com",
+              "street 456, city stuttgart, 71229");
+
+      patient1.getContacts().add(contact);
+      patient1.getContacts().add(contact2);
+
+      Vaccine vaccine = new Vaccine("Corona", "15.03.2021");
+      Vaccine vaccine2 = new Vaccine("Polio", "12.01.2001");
+      Vaccine vaccine3 = new Vaccine("Hepatitis-B", "1.12.2005");
+      patient1.getVaccines().add(vaccine);
+      patient1.getVaccines().add(vaccine2);
+      patient1.getVaccines().add(vaccine3);
+
+      Allergy allergy = new Allergy("pollins", "10.01.2020");
+      Allergy allergy1 = new Allergy("Milk", "01.01.1998");
+      patient1.getAllergies().add(allergy);
+      patient1.getAllergies().add(allergy1);
+
+      PreviousIllness previousIllness = new PreviousIllness("Diabetis", "01.01.2005");
+      PreviousIllness previousIllness1 = new PreviousIllness("Low Blood Pressure", "07.01.2010");
+      patient1.getPreviousIllnesses().add(previousIllness);
+      patient1.getPreviousIllnesses().add(previousIllness1);
+      this.patientRepository.save(patient1);
 
       repository.save(
           new Patient(

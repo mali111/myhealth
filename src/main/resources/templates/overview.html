@@ -27,6 +27,7 @@
         <li class="list-group-item overview-card-info" th:text="'Insured at:'+ ${insurance}"></li>
         <li class="list-group-item overview-card-info"
             th:text="'Additional info: '+ ${additionalInfo}"></li>
+        <!-- Drug Intollerance list !-->
         <table>
           <thead>
           <tr>
@@ -42,8 +43,82 @@
           </tr>
           </tbody>
         </table>
-        <li class="list-group-item overview-card-info" th:text="'Allergies: '"></li>
-        <li class="list-group-item overview-card-info" th:text="'Diseases: '"></li>
+
+        <!-- contact list !-->
+        <table>
+          <thead>
+          <tr>
+            <th> Contact List :</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr th:if="${contacts.empty}">
+            <td colspan="2"> No Contacts Available</td>
+          </tr>
+          <tr th:each="contact : ${contacts}">
+            <td><span th:text="${contact.firstName}">First Name </span></td>
+            <td><span th:text="${contact.lastName}">Last Name </span></td>
+            <td><span th:text="${contact.telephone}">Telephone </span></td>
+            <td><span th:text="${contact.email}">email </span></td>
+            <td><span th:text="${contact.address}">Address</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <!-- Vaccine list !-->
+        <table>
+          <thead>
+          <tr>
+            <th> Vaccine List :</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr th:if="${vaccines.empty}">
+            <td colspan="2"> No Vaccination Available</td>
+          </tr>
+          <tr th:each="vaccine : ${vaccines}">
+            <td><span th:text="${vaccine.name}"> Name </span></td>
+            <td><span th:text="${vaccine.date}">Vaccine </span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <!-- Alleries list !-->
+        <table>
+          <thead>
+          <tr>
+            <th> Allergy List :</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr th:if="${allergies.empty}">
+            <td colspan="2"> No Allergies known</td>
+          </tr>
+          <tr th:each="allergie : ${allergies}">
+            <td><span th:text="${allergie.name}"> Name </span></td>
+            <td><span th:text="${allergie.knownSince}">known since </span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <!-- previousIllnesses list !-->
+        <table>
+          <thead>
+          <tr>
+            <th> PreviousIllness List :</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr th:if="${previousIllnesses.empty}">
+            <td colspan="2"> No PreviousIllnesses Known</td>
+          </tr>
+          <tr th:each="previousIllness : ${previousIllnesses}">
+            <td><span th:text="${previousIllness.name}"> Name </span></td>
+            <td><span th:text="${previousIllness.date}">Date </span></td>
+          </tr>
+          </tbody>
+        </table>
+
       </ul>
       <div class="card-body">
         <a href="#" class="btn btn-primary">Go somewhere</a>

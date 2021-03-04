@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 public class DrugIntollerance {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private long id;
+  private long drugIntolleranceId;
 
   private String name;
   private String knownSince;
