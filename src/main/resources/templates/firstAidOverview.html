@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <div th:replace="header" :: myheader></div>
+</head>
+
+<body>
+<div class="row">
+  <div class="col-md-12" th:replace="navbar" :: mynavbar></div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card text-white bg-info">
+      <div class="card-body">
+        <h5 class="card-title" th:text="'Welcome '+ ${firstName} +' '+ ${lastName}">Card title</h5>
+        <p class="card-text">Below you can find some useful Basic Information</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item overview-card-info" th:text="'Age: '+ ${age}"></li>
+        <li class="list-group-item overview-card-info" th:text="'Gender: '+ ${gender}"></li>
+        <li class="list-group-item overview-card-info" th:text="'Weight: '+ ${weight}"></li>
+        <li class="list-group-item overview-card-info" th:text="'BloodGroup: '+ ${bloodGroup}"></li>
+        <li class="list-group-item overview-card-info" th:text="'Pregnant: '+ ${pregnant}"></li>
+        <li class="list-group-item overview-card-info" th:text="'OrganDonor: '+ ${organDonor}"></li>
+        <li class="list-group-item overview-card-info" th:text="'Smoker: '+ ${smoker}"></li>
+        <li class="list-group-item overview-card-info" th:text="'Insured at: '+ ${insurance}"></li>
+        <li class="list-group-item overview-card-info"
+            th:text="'Additional info: '+ ${additionalInfo}"></li>
+      </ul>
+      <!-- Drug Intollerance list !-->
+      <ul class="list-group list-group-flush" style="margin-left: 20px;">
+        <h6 th:text="'Drug Intollerance: '"></h6>
+        <li class="list-group-item overview-card-info"
+            th:each="drugIntollerance: ${drugIntollerances}"
+            th:text="${drugIntollerance.name}">
+        </li>
+      </ul>
+
+      <!-- Contact list!-->
+      <ul class="list-group list-group-flush" style="margin-left: 20px;"
+          th:each="contact: ${contacts}">
+        <h6 th:text="'Emergency Contact: '"></h6>
+        <li class="list-group-item overview-card-info"
+            th:text="'Name: ' + ${contact.firstName} + ' ' + ${contact.lastName}  + ' ' + ' ' + ' '+ ' '
+            +'Telephone: ' + ${contact.telephone} + ' ' + ' ' + ' '+ ' '+ 'Email: ' + ${contact.email}">
+        </li>
+        <li class="list-group-item overview-card-info"
+            th:text="'Address: ' + ${contact.address}">
+        </li>
+      </ul>
+
+      <!-- Vaccine list!-->
+      <ul class="list-group list-group-flush" style="margin-left: 20px;">
+        <h6 th:text="'Vaccine List : '"></h6>
+        <li class="list-group-item overview-card-info" th:each="vaccine: ${vaccines}"
+            th:text="'Name: ' + ${vaccine.name} + ' '+ ' '+ ' ' + ${vaccine.date}">
+        </li>
+      </ul>
+
+      <!-- Allergies list !-->
+      <ul class="list-group list-group-flush" style="margin-left: 20px;">
+        <h6 th:text="'Allergy List : '"></h6>
+        <li class="list-group-item overview-card-info" th:each="allergie: ${allergies}"
+            th:text="'Name: ' + ${allergie.name} + ' '+ ' '+ ' Known Since ' + ${allergie.knownSince}">
+        </li>
+      </ul>
+      <div class="card-body">
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div th:replace="footer" :: myfooter></div>
+</div>
+</body>
+</html>
