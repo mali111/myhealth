@@ -4,7 +4,6 @@ import static java.lang.Boolean.FALSE;
 import static java.lang.Boolean.TRUE;
 
 import com.myhealth.wedigitalize.medication.Medication;
-import com.myhealth.wedigitalize.medication.repository.MedicationRepository;
 import com.myhealth.wedigitalize.patient.Allergy;
 import com.myhealth.wedigitalize.patient.Contact;
 import com.myhealth.wedigitalize.patient.DrugIntollerance;
@@ -36,10 +35,10 @@ public class MyhealthApplication extends SpringBootServletInitializer {
     return args -> {
       Patient patient1 =
           new Patient(
-              "max",
-              "mustermann",
-              "2.02.1990",
-              "26",
+              "Elon",
+              "Musk",
+              "28.07.1971",
+              "50",
               "male",
               "80kg",
               TRUE,
@@ -47,7 +46,7 @@ public class MyhealthApplication extends SpringBootServletInitializer {
               FALSE,
               "No information",
               false,
-              "Private");
+              "AOK");
       DrugIntollerance drugIntollerance = new DrugIntollerance("penicillin", "26.02.2020");
       DrugIntollerance drugIntollerance1 = new DrugIntollerance("Lactose", "2.02.2021");
 
@@ -56,18 +55,18 @@ public class MyhealthApplication extends SpringBootServletInitializer {
 
       Contact contact =
           new Contact(
-              "Khalid",
-              "Khan",
+              "Justine",
+              "Musk",
               "01526548654",
-              "abc@gmail.com",
-              "street 123, city stuttgart, 71229");
+              "justinemusk@gmail.com",
+              "39 Nichols Lane" + "Brooklyn, NY 11201");
       Contact contact2 =
           new Contact(
-              "Omar",
-              "Nadeem",
+              "Talulah ",
+              "Riley",
               "015265445",
-              "abc@hotmail.com",
-              "street 456, city stuttgart, 71229");
+              "talulahriley@hotmail.com",
+              "1 Big Rock Cove Ave." + "New York, NY 10034");
 
       patient1.getContacts().add(contact);
       patient1.getContacts().add(contact2);
@@ -88,6 +87,32 @@ public class MyhealthApplication extends SpringBootServletInitializer {
       PreviousIllness previousIllness1 = new PreviousIllness("Low Blood Pressure", "07.01.2010");
       patient1.getPreviousIllnesses().add(previousIllness);
       patient1.getPreviousIllnesses().add(previousIllness1);
+
+      Medication medication =
+          new Medication(
+              0631340,
+              "Ibuflam",
+              "17.02.2021",
+              "17.04.2021",
+              TRUE,
+              "Morning",
+              "Ibuprofen",
+              TRUE,
+              "icreases my BP");
+      Medication medication1 =
+          new Medication(
+              0532340,
+              "Aspirin",
+              "17.01.2020",
+              "Continue",
+              TRUE,
+              "Night",
+              "Acetylsalicylsäure ",
+              TRUE,
+              "only when needed");
+      patient1.getMedications().add(medication);
+      patient1.getMedications().add(medication1);
+
       this.patientRepository.save(patient1);
 
       repository.save(
@@ -128,7 +153,7 @@ public class MyhealthApplication extends SpringBootServletInitializer {
     };
   }
 
-  @Bean
+  /*@Bean
   CommandLineRunner runner2(MedicationRepository repository) {
     return args -> {
       repository.save(
@@ -172,5 +197,5 @@ public class MyhealthApplication extends SpringBootServletInitializer {
       }
       log.info("Log ends here");
     };
-  }
+  }*/
 }

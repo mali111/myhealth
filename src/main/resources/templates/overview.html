@@ -10,11 +10,10 @@
 </div>
 <div class="row">
   <div class="col-md-4">
-    <div class="card text-white bg-info">
+    <div class="card text-white bg-info mostly-customized-scrollbar basicInformation">
       <div class="card-body">
         <h5 class="card-title" th:text="'Welcome '+ ${firstName} +' '+ ${lastName}">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk
-          of the card's content.</p>
+        <p class="card-text">See below some basic information.</p>
       </div>
       <ul class="list-group list-group-flush">
         <li class="list-group-item overview-card-info" th:text="'Age:'+ ${age}"></li>
@@ -27,179 +26,210 @@
         <li class="list-group-item overview-card-info" th:text="'Insured at:'+ ${insurance}"></li>
         <li class="list-group-item overview-card-info"
             th:text="'Additional info: '+ ${additionalInfo}"></li>
-        <!-- Drug Intollerance list !-->
-        <table>
-          <thead>
-          <tr>
-            <th> Drug intollerances :</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr th:if="${drugIntollerances.empty}">
-            <td colspan="2"> No Intollerance Available</td>
-          </tr>
-          <tr th:each="drugIntollerance : ${drugIntollerances}">
-            <td><span th:text="${drugIntollerance.name}"> Name </span></td>
-          </tr>
-          </tbody>
-        </table>
-
-        <!-- contact list !-->
-        <table>
-          <thead>
-          <tr>
-            <th> Contact List :</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr th:if="${contacts.empty}">
-            <td colspan="2"> No Contacts Available</td>
-          </tr>
-          <tr th:each="contact : ${contacts}">
-            <td><span th:text="${contact.firstName}">First Name </span></td>
-            <td><span th:text="${contact.lastName}">Last Name </span></td>
-            <td><span th:text="${contact.telephone}">Telephone </span></td>
-            <td><span th:text="${contact.email}">email </span></td>
-            <td><span th:text="${contact.address}">Address</span></td>
-          </tr>
-          </tbody>
-        </table>
-
-        <!-- Vaccine list !-->
-        <table>
-          <thead>
-          <tr>
-            <th> Vaccine List :</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr th:if="${vaccines.empty}">
-            <td colspan="2"> No Vaccination Available</td>
-          </tr>
-          <tr th:each="vaccine : ${vaccines}">
-            <td><span th:text="${vaccine.name}"> Name </span></td>
-            <td><span th:text="${vaccine.date}">Vaccine </span></td>
-          </tr>
-          </tbody>
-        </table>
-
-        <!-- Allergies list !-->
-        <table>
-          <thead>
-          <tr>
-            <th> Allergy List :</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr th:if="${allergies.empty}">
-            <td colspan="2"> No Allergies known</td>
-          </tr>
-          <tr th:each="allergie : ${allergies}">
-            <td><span th:text="${allergie.name}"> Name </span></td>
-            <td><span th:text="${allergie.knownSince}">known since </span></td>
-          </tr>
-          </tbody>
-        </table>
-
-        <!-- previousIllnesses list !-->
-        <table>
-          <thead>
-          <tr>
-            <th> PreviousIllness List :</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr th:if="${previousIllnesses.empty}">
-            <td colspan="2"> No PreviousIllnesses Known</td>
-          </tr>
-          <tr th:each="previousIllness : ${previousIllnesses}">
-            <td><span th:text="${previousIllness.name}"> Name </span></td>
-            <td><span th:text="${previousIllness.date}">Date </span></td>
-          </tr>
-          </tbody>
-        </table>
-
       </ul>
-      <div class="card-body">
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
     </div>
-  </div>
-  <div class="col-md-4">
-    <div class="card text-white bg-warning">
+    <div class="card text-white bg-danger mostly-customized-scrollbar">
       <div class="card-body">
         <h5 class="card-title"
-            th:text="'Medication list for '+ ${firstName} +' '+ ${lastName}"></h5>
-        <p class="card-text">Below you can see the active medication list.</p>
+            th:text="'Emergency Contact List'"></h5>
+        <p class="card-text">Below you can see Emergency Contact list.</p>
       </div>
+
       <ul class="list-group list-group-flush">
-        <li class="list-group-item overview-card-warning"
-            th:text="${medicationName} + ' ' + ${medicationActiveIngredient} + ' ' + 'Dosis: '+ ${medicationDosage}"></li>
-        <li class="list-group-item overview-card-warning"
-            th:text="${medicationName} + ' ' + ${medicationActiveIngredient} + ' ' + 'Dosis: '+ ${medicationDosage}"></li>
-        <li class="list-group-item overview-card-warning"
-            th:text="${medicationName} + ' ' + ${medicationActiveIngredient} + ' ' + 'Dosis: '+ ${medicationDosage}"></li>
-        <li class="list-group-item overview-card-warning"
-            th:text="${medicationName} + ' ' + ${medicationActiveIngredient} + ' ' + 'Dosis: '+ ${medicationDosage}"></li>
-        <li class="list-group-item overview-card-warning"
-            th:text="${medicationName} + ' ' + ${medicationActiveIngredient} + ' ' + 'Dosis: '+ ${medicationDosage}"></li>
-        <li class="list-group-item overview-card-warning"
-            th:text="${medicationName} + ' ' + ${medicationActiveIngredient} + ' ' + 'Dosis: '+ ${medicationDosage}"></li>
-        <li class="list-group-item overview-card-warning"
-            th:text="${medicationName} + ' ' + ${medicationActiveIngredient} + ' ' + 'Dosis: '+ ${medicationDosage}"></li>
-        <li class="list-group-item overview-card-warning"
-            th:text="${medicationName} + ' ' + ${medicationActiveIngredient} + ' ' + 'Dosis: '+ ${medicationDosage}"></li>
-        <li class="list-group-item overview-card-warning"
-            th:text="${medicationName} + ' ' + ${medicationActiveIngredient} + ' ' + 'Dosis: '+ ${medicationDosage}"></li>
-        <li class="list-group-item overview-card-warning"
-            th:text="${medicationName} + ' ' + ${medicationActiveIngredient} + ' ' + 'Dosis: '+ ${medicationDosage}"></li>
-        <li class="list-group-item overview-card-warning"
-            th:text="${medicationName} + ' ' + ${medicationActiveIngredient} + ' ' + 'Dosis: '+ ${medicationDosage}"></li>
+        <!-- Emergency Contact List!-->
+        <table>
+          <tbody>
+          <tr th:if="${contacts.empty}">
+            <td colspan="2"> No Emergency Contacts are Known</td>
+          </tr>
+          <tr th:each="contact : ${contacts}">
+            <td class="list-group-item overview-card-danger">
+              <span
+                  th:text="${contact.firstName} + ' ' + ${contact.lastName} + ' ' + 'Telephone: '+ ${contact.telephone}">> Contact Details </span>
+              <p
+                  th:text="'Email: ' + ${contact.email}">
+                Contact Details </p>
+              <p
+                  th:text="'Address: ' + ${contact.address}">
+                Contact Details </p>
+            </td>
+          </tr>
+          </tbody>
+        </table>
       </ul>
-      <div class="card-body">
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
     </div>
   </div>
 
   <div class="col-md-4">
-    <div class="card text-white bg-danger">
+    <div class="card text-white bg-warning mostly-customized-scrollbar">
       <div class="card-body">
-        <h5 class="card-title" th:text="'Todo list for '+ ${firstName} +' '+ ${lastName}">Card
-          title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk
-          of the card's content.</p>
+        <h5 class="card-title"
+            th:text="'Current Medications '"></h5>
+        <p class="card-text">Below you can see the active medication list.</p>
       </div>
+
       <ul class="list-group list-group-flush">
-        <li class="list-group-item overview-card-danger" th:text="'Visit Dentist:'"></li>
-        <li class="list-group-item overview-card-danger" th:text="'Visit Gynacologist:'"></li>
-        <li class="list-group-item overview-card-danger" th:text="'Long Term Medication'"></li>
-        <li class="list-group-item overview-card-danger" th:text="'upcoming Vaccination'"></li>
-        <li class="list-group-item overview-card-danger" th:text="'Eat Green'"></li>
-        <li class="list-group-item overview-card-danger" th:text="'Do Sports'"></li>
-        <li class="list-group-item overview-card-danger" th:text="'Work-life Balance'"></li>
-        <li class="list-group-item overview-card-danger" th:text="'Regular checkup'"></li>
-        <li class="list-group-item overview-card-danger" th:text="'Check Blood Pressure'"></li>
-        <li class="list-group-item overview-card-danger" th:text="'Keep an eye on your Sugar'"></li>
-        <li class="list-group-item overview-card-danger" th:text="'Long Term Medication'"></li>
+        <!-- Medications list !-->
+        <table>
+          <tbody>
+          <tr th:if="${medications.empty}">
+            <td colspan="2"> No Medications are Known</td>
+          </tr>
+          <tr th:each="medication : ${medications}">
+            <td class="list-group-item overview-card-warning">
+              <span
+                  th:text="${medication.medicationName} + ' ' + ${medication.activeIngredient} + ' ' + 'Dosis: '+ ${medication.dosage}">> Medication Details </span>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+
       </ul>
       <div class="card-body">
         <a href="#" class="btn btn-primary">Go somewhere</a>
       </div>
     </div>
+
+    <div class="card text-white bg-danger mostly-customized-scrollbar">
+      <div class="card-body">
+        <h5 class="card-title"
+            th:text="'Vaccinations List '"></h5>
+        <p class="card-text">Below you can see the active Vaccination list.</p>
+      </div>
+
+      <ul class="list-group list-group-flush">
+        <!-- Vaccination List  !-->
+        <table>
+          <tbody>
+          <tr th:if="${vaccines.empty}">
+            <td colspan="2"> No vaccines are Known</td>
+          </tr>
+          <tr th:each="vaccine : ${vaccines}">
+            <td class="list-group-item overview-card-danger">
+              <span
+                  th:text="${vaccine.name} + ' ' + ${vaccine.date}"> Vaccination Details </span>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </ul>
+    </div>
+
+    <div class="card text-white bg-info mostly-customized-scrollbar">
+      <div class="card-body">
+        <h5 class="card-title"
+            th:text="'Drug Intollerance List'"></h5>
+        <p class="card-text">Below you can see Drug intollerance list.</p>
+      </div>
+
+      <ul class="list-group list-group-flush">
+        <!-- Drug intollerance list !-->
+        <table>
+          <tbody>
+          <tr th:if="${drugIntollerances.empty}">
+            <td colspan="2"> No DrugIn tollerances are Known</td>
+          </tr>
+          <tr th:each="drugIntollerance : ${drugIntollerances}">
+            <td class="list-group-item overview-card-info">
+              <span
+                  th:text="${drugIntollerance.name}"> Vaccination Details </span>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+
+      </ul>
+    </div>
   </div>
 
-</div>
-<div class="row">
-  <div class="col-md-6">
-    <div th:replace="appointment-overview-carousel" :: myappointment-overview-carousel></div>
+  <div class="col-md-4">
+    <div class="card text-white bg-danger mostly-customized-scrollbar">
+      <div class="card-body">
+        <h5 class="card-title"
+            th:text="'Allergies List'"></h5>
+        <p class="card-text">Below you can see Allergies list.</p>
+      </div>
+
+      <ul class="list-group list-group-flush">
+        <!-- Allergies  List!-->
+        <table>
+          <tbody>
+          <tr th:if="${allergies.empty}">
+            <td colspan="2"> No Allergies are Known</td>
+          </tr>
+          <tr th:each="allergie : ${allergies}">
+            <td class="list-group-item overview-card-danger">
+              <span
+                  th:text="${allergie.name} + ' ' + ${allergie.knownSince}"> Vaccination Details </span>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+
+      </ul>
+    </div>
+    <div class="card text-white bg-info mostly-customized-scrollbar">
+      <div class="card-body">
+        <h5 class="card-title"
+            th:text="'PreviousIllness List'"></h5>
+        <p class="card-text">Below you can see PreviousIllness List.</p>
+      </div>
+
+      <ul class="list-group list-group-flush">
+        <!-- PreviousIllness List!-->
+        <table>
+          <tbody>
+          <tr th:if="${previousIllnesses.empty}">
+            <td colspan="2"> No PreviousIllnesses are Known</td>
+          </tr>
+          <tr th:each="previousIllness : ${previousIllnesses}">
+            <td class="list-group-item overview-card-info">
+              <span
+                  th:text="${previousIllness.name} + ' ' + ${previousIllness.date}"> PreviousIllness Details </span>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+
+      </ul>
+    </div>
+
+    <div class="card text-white bg-warning mostly-customized-scrollbar">
+      <div class="card-body">
+        <h5 class="card-title"
+            th:text="'Recommendations for you '"></h5>
+        <p class="card-text">Here are few recommendations for you. </p>
+      </div>
+
+      <ul class="list-group list-group-flush">
+        <!-- Recommendations  List!-->
+        <table>
+          <tbody>
+          <tr th:if="${allergies.empty}">
+            <td colspan="2"> No Recommendations for you, you are awesome</td>
+          </tr>
+          <tr th:each="allergie : ${allergies}">
+            <td class="list-group-item overview-card-warning">
+              <span
+                  th:text="${allergie.name} + ' ' + ${allergie.knownSince}"> Recommendations Details </span>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </ul>
+    </div>
+
   </div>
-  <div class="col-md-6">
-    <div th:replace="appointment-overview-carousel" :: myappointment-overview-carousel></div>
+  <div class="row">
+    <div class="col-md-6">
+      <div th:replace="appointment-overview-carousel" :: myappointment-overview-carousel></div>
+    </div>
+    <div class="col-md-6">
+      <div th:replace="appointment-overview-carousel" :: myappointment-overview-carousel></div>
+    </div>
   </div>
-</div>
-<div class="row">
-  <div th:replace="footer" :: myfooter></div>
-</div>
+  <div class="row">
+    <div th:replace="footer" :: myfooter></div>
+  </div>
 </body>
 </html>

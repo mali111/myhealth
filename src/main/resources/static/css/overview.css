@@ -7,3 +7,22 @@
 .overview-card-danger {
   background-color: #dc3545!important;
 }
+/* Scrollbar*/
+.mostly-customized-scrollbar {
+   overflow: auto;
+   height: 13em;
+ }
+ /* Demonstrate a "mostly customized" scrollbar
+  * (won't be visible otherwise if width/height is specified) */
+ .mostly-customized-scrollbar::-webkit-scrollbar {
+   width: 6px;
+   height: 8px;
+   background-color: #aaa; /* or add it to the track */
+ }
+ /* Add a thumb */
+ .mostly-customized-scrollbar::-webkit-scrollbar-thumb {
+     background: #000;
+ }
+ .basicInformation{
+    height:26em;
+ }

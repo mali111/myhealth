@@ -1,6 +1,5 @@
 package com.myhealth.wedigitalize.controller;
 
-import com.myhealth.wedigitalize.medication.Medication;
 import com.myhealth.wedigitalize.medication.repository.MedicationRepository;
 import com.myhealth.wedigitalize.patient.Patient;
 import com.myhealth.wedigitalize.patient.repository.AllergyRepository;
@@ -32,7 +31,8 @@ public class OverviewController {
       Model contact,
       Model vaccine,
       Model allergy,
-      Model previousIllness) {
+      Model previousIllness,
+      Model medication) {
     // General Patient Data
     Patient patient = patientRepository.findById(1);
     model.put("firstName", patient.getFirstName().toString());
@@ -58,17 +58,8 @@ public class OverviewController {
     // Pervious Illness List
     previousIllness.addAttribute("previousIllnesses", previousIllnessesRepository.findAll());
     // Medication Data
-    Medication medication = medicationRepository.findByPznNumber(0631340);
-    model.put("medicationName", medication.getMedicationName().toString());
-    model.put("medicationPZN", medication.getPznNumber());
-    model.put("medicationDosage", medication.getDosage().toString());
-    model.put("medicationStartDate", medication.getStartDate().toString());
-    model.put("medicationEndDate", medication.getEndDate().toString());
-    model.put("medicationActiveIngredient", medication.getActiveIngredient().toString());
-    model.put("medicationNotes", medication.getNotes().toString());
-    model.put("medicationActive", medication.isActivate());
-    model.put("medicationPrescriptionRequired", medication.isPrescriptionRequired());
 
+    medication.addAttribute("medications", medicationRepository.findAll());
     return "overview";
   }
 

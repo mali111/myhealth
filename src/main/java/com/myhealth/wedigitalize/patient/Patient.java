@@ -1,5 +1,6 @@
 package com.myhealth.wedigitalize.patient;
 
+import com.myhealth.wedigitalize.medication.Medication;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.CascadeType;
@@ -57,6 +58,11 @@ public class Patient {
   @OneToMany(cascade = CascadeType.ALL)
   @JoinColumn(name = "pp-fid", referencedColumnName = "id")
   List<PreviousIllness> previousIllnesses = new ArrayList<>();
+
+  @LazyCollection(LazyCollectionOption.FALSE)
+  @OneToMany(cascade = CascadeType.ALL)
+  @JoinColumn(name = "pm-fid", referencedColumnName = "id")
+  List<Medication> medications = new ArrayList<>();
 
   public Patient(
       String firstName,
