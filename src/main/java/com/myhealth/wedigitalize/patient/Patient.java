@@ -24,15 +24,15 @@ public class Patient {
   private String firstName;
   private String lastName;
   private String dob;
-  private String age;
+  private String email;
+  private String password;
+  private String reTypePassword;
   private String gender;
-  private String weight;
   private boolean OrganDonor;
   private String bloodGroup;
   private boolean pregnant;
   private boolean smoker;
   private String additionalInfo;
-  private String insurance;
 
   @LazyCollection(LazyCollectionOption.FALSE)
   @OneToMany(cascade = CascadeType.ALL)
@@ -68,26 +68,26 @@ public class Patient {
       String firstName,
       String lastName,
       String dob,
-      String age,
+      String email,
       String gender,
-      String weight,
+      String reTypePassword,
       boolean organDonor,
       String bloodGroup,
       boolean pregnant,
       String additionalInfo,
       boolean smoker,
-      String insurance) {
+      String password) {
     this.firstName = firstName;
     this.lastName = lastName;
     this.dob = dob;
-    this.age = age;
+    this.email = email;
     this.gender = gender;
-    this.weight = weight;
+    this.reTypePassword = reTypePassword;
     this.OrganDonor = organDonor;
     this.bloodGroup = bloodGroup;
     this.pregnant = pregnant;
     this.additionalInfo = additionalInfo;
     this.smoker = smoker;
-    this.insurance = insurance;
+    this.password = password;
   }
 }

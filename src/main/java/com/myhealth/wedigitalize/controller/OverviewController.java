@@ -44,14 +44,14 @@ public class OverviewController {
     model.put("firstName", patient.getFirstName().toString());
     model.put("lastName", patient.getLastName().toString());
     model.put("dob", patient.getDob().toString());
-    model.put("age", patient.getAge().toString());
+    model.put("age", patient.getEmail().toString());
     model.put("gender", patient.getGender().toString());
     model.put("bloodGroup", patient.getBloodGroup().toString());
-    model.put("weight", patient.getWeight().toString());
+    model.put("weight", patient.getReTypePassword().toString());
     model.put("organDonor", patient.isOrganDonor());
     model.put("pregnant", patient.isPregnant());
     model.put("smoker", patient.isSmoker());
-    model.put("insurance", patient.getInsurance());
+    model.put("insurance", patient.getPassword());
     model.put("additionalInfo", patient.getAdditionalInfo());
     // drug Intollerance List
     drugInt.addAttribute("drugIntollerances", drugIntolleranceRepository.findAll());
@@ -82,14 +82,14 @@ public class OverviewController {
     model.put("firstName", patient.getFirstName().toString());
     model.put("lastName", patient.getLastName().toString());
     model.put("dob", patient.getDob().toString());
-    model.put("age", patient.getAge().toString());
+    model.put("age", patient.getEmail().toString());
     model.put("gender", patient.getGender().toString());
     model.put("bloodGroup", patient.getBloodGroup().toString());
-    model.put("weight", patient.getWeight().toString());
+    model.put("weight", patient.getReTypePassword().toString());
     model.put("organDonor", patient.isOrganDonor());
     model.put("pregnant", patient.isPregnant());
     model.put("smoker", patient.isSmoker());
-    model.put("insurance", patient.getInsurance());
+    model.put("insurance", patient.getPassword());
     model.put("additionalInfo", patient.getAdditionalInfo());
     // drug Intollerance List
     drugInt.addAttribute("drugIntollerances", drugIntolleranceRepository.findAll());
@@ -114,14 +114,17 @@ public class OverviewController {
     model.addAttribute("firstname", patient.getFirstName());
     model.addAttribute("lastname", patient.getLastName());
     model.addAttribute("dob", patient.getDob().toString());
-    model.addAttribute("age", patient.getAge().toString());
+
+    model.addAttribute("email", patient.getEmail().toString());
+    model.addAttribute("password", patient.getPassword());
+    model.addAttribute("reTypePassword", patient.getReTypePassword().toString());
+
     model.addAttribute("gender", patient.getGender().toString());
     model.addAttribute("bloodGroup", patient.getBloodGroup().toString());
-    model.addAttribute("weight", patient.getWeight().toString());
     model.addAttribute("organDonor", patient.isOrganDonor());
+
     model.addAttribute("pregnant", patient.isPregnant());
     model.addAttribute("smoker", patient.isSmoker());
-    model.addAttribute("insurance", patient.getInsurance());
     model.addAttribute("additionalInfo", patient.getAdditionalInfo());
     patientRepository.save(patient);
     return "registration";
