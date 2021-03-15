@@ -6,22 +6,22 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
-<h1>Form</h1>
-<form action="#" th:action="@{/registration}" th:object="${patient}" method="post">
+<h1>Registraion Form</h1>
+<form action="#" th:action="@{/signup-submit}" th:object="${patient}" method="post">
   <div class="form-row">
     <div class="col-md-4 mb-3">
       <label for="validationDefault01">First name: </label>
-      <input type="text" class="form-control" id="validationDefault01" th:field="*{firstName}"
+      <input type="text" class="form-control" id="validationDefault01" name="firstName"
              placeholder="John" required>
     </div>
     <div class="col-md-4 mb-3">
       <label for="validationDefault02">Last name: </label>
-      <input type="text" class="form-control" id="validationDefault02" th:field="*{lastName}"
+      <input type="text" class="form-control" id="validationDefault02" name="lastName"
              placeholder="Johnson" required>
     </div>
     <div class="col-md-4 mb-3">
       <label for="validationDefault03">Date of Birth: </label>
-      <input type="text" class="form-control" id="validationDefault03" th:field="*{dob}"
+      <input type="text" class="form-control" id="validationDefault03" name="dob"
              placeholder="01.01.2010" required>
     </div>
   </div>
@@ -30,38 +30,40 @@
     <div class="col-md-4 mb-3">
       <label for="exampleInputEmail1">Email: </label>
       <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-             th:field="*{email}"
+             name="email"
              placeholder="Enter email" required>
       <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
         else.</small>
     </div>
     <div class="col-md-4 mb-3">
       <label for="exampleInputPassword1">Password: </label>
-      <input type="password" class="form-control" id="exampleInputPassword1" th:field="*{password}"
+      <input type="password" class="form-control" id="exampleInputPassword1" name="password"
              placeholder="Password" required>
     </div>
     <div class="col-md-4 mb-3">
       <label for="exampleInputPassword2">Retype Password: </label>
       <input type="password" class="form-control" id="exampleInputPassword2"
-             th:field="*{reTypePassword}"
+             name="reTypePassword"
              placeholder="Retype Password" required>
     </div>
   </div>
-
   <div class="form-row">
-    <div class="col-md-4 mb-3">
-      <label for="validationDefault07">Gender: </label>
-      <input type="text" class="form-control" id="validationDefault07" th:field="*{gender}"
-             placeholder="Male" required>
+    <div class="form-group col-md-4 mb-3">
+      <label for="inputState">Gender</label>
+      <select id="inputState" class="form-control" name="gender">
+        <option th:value="'MALE'" th:text="Male"></option>
+        <option th:value="'FEMALE'" th:text="Female"></option>
+        <option th:value="'DIVERSE'" th:text="Diverse"></option>
+      </select>
     </div>
     <div class="col-md-4 mb-3">
       <label for="validationDefault08">Blood Group: </label>
-      <input type="text" class="form-control" id="validationDefault08" th:field="*{bloodGroup}"
+      <input type="text" class="form-control" id="validationDefault08" name="bloodGroup"
              placeholder="A+" required>
     </div>
     <div class="col-md-4 mb-3">
       <label for="validationDefault09">Organ Donor: </label>
-      <input type="text" class="form-control" id="validationDefault09" th:field="*{organDonor}"
+      <input type="text" class="form-control" id="validationDefault09" name="organDonor"
              placeholder="Yes" required>
     </div>
   </div>
@@ -69,22 +71,22 @@
   <div class="form-row">
     <div class="col-md-4 mb-3">
       <label for="validationDefault10">Smoker: </label>
-      <input type="text" class="form-control" id="validationDefault10" th:field="*{smoker}"
+      <input type="text" class="form-control" id="validationDefault10" name="smoker"
              placeholder="No" required>
     </div>
     <div class="col-md-4 mb-3">
       <label for="validationDefault11">Pregnant: </label>
-      <input type="text" class="form-control" id="validationDefault11" th:field="*{pregnant}"
+      <input type="text" class="form-control" id="validationDefault11" name="pregnant"
              placeholder="No" required>
     </div>
     <div class="col-md-4 mb-3">
       <label for="validationDefault12">Additional Information: </label>
-      <input type="text" class="form-control" id="validationDefault12" th:field="*{additionalInfo}"
+      <input type="text" class="form-control" id="validationDefault12" name="additionalInfo"
              placeholder="Any useful Comment for the Doctor" required>
     </div>
 
   </div>
-  <button type="submit" value="submit" class="btn btn-primary">Sign in</button>
+  <button type="submit" value="submitSignUp" class="btn btn-primary">Register</button>
 </form>
 </body>
 </html>

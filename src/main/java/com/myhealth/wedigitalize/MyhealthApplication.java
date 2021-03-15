@@ -7,6 +7,7 @@ import com.myhealth.wedigitalize.medication.Medication;
 import com.myhealth.wedigitalize.patient.Allergy;
 import com.myhealth.wedigitalize.patient.Contact;
 import com.myhealth.wedigitalize.patient.DrugIntollerance;
+import com.myhealth.wedigitalize.patient.Gender;
 import com.myhealth.wedigitalize.patient.Patient;
 import com.myhealth.wedigitalize.patient.PreviousIllness;
 import com.myhealth.wedigitalize.patient.Vaccine;
@@ -39,8 +40,8 @@ public class MyhealthApplication extends SpringBootServletInitializer {
               "Musk",
               "28.07.1971",
               "50",
-              "male",
-              "80kg",
+              Gender.MALE,
+              "TopSecret",
               TRUE,
               "A+ve",
               FALSE,
@@ -121,8 +122,8 @@ public class MyhealthApplication extends SpringBootServletInitializer {
               "Khawar",
               "2.02.2019",
               "2",
-              "Female",
-              "8kg",
+              Gender.FEMALE,
+              "secret",
               FALSE,
               "B+ve",
               FALSE,
@@ -135,8 +136,8 @@ public class MyhealthApplication extends SpringBootServletInitializer {
               "Khawar",
               "2.02.2018",
               "9",
-              "male",
-              "18kg",
+              Gender.MALE,
+              "secret",
               FALSE,
               "A-ve",
               FALSE,

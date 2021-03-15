@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -27,12 +29,14 @@ public class Patient {
   private String email;
   private String password;
   private String reTypePassword;
-  private String gender;
   private boolean OrganDonor;
   private String bloodGroup;
   private boolean pregnant;
   private boolean smoker;
   private String additionalInfo;
+
+  @Enumerated(EnumType.STRING)
+  private Gender gender;
 
   @LazyCollection(LazyCollectionOption.FALSE)
   @OneToMany(cascade = CascadeType.ALL)
@@ -69,7 +73,7 @@ public class Patient {
       String lastName,
       String dob,
       String email,
-      String gender,
+      Gender gender,
       String reTypePassword,
       boolean organDonor,
       String bloodGroup,
