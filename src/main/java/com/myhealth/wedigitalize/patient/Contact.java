@@ -22,13 +22,32 @@ public class Contact {
   private String telephone;
   private String email;
   private String address;
+  private String address2;
+  private String city;
+  private String state;
+  private String zip;
+  private String country;
 
   public Contact(
-      String firstname, String lastName, String telephone, String email, String address) {
-    this.firstName = firstname;
+      String firstName,
+      String lastName,
+      String telephone,
+      String email,
+      String address,
+      String address2,
+      String city,
+      String state,
+      String zip,
+      String country) {
+    this.firstName = firstName;
     this.lastName = lastName;
     this.telephone = telephone;
     this.email = email;
     this.address = address;
+    this.address2 = address2;
+    this.city = city;
+    this.state = state;
+    this.zip = zip;
+    this.country = country;
   }
 }

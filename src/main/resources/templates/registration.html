@@ -8,14 +8,15 @@
 <body>
 <h1>Registraion Form</h1>
 <form action="#" th:action="@{/signup-submit}" th:object="${patient}" method="post">
+
   <div class="form-row">
     <div class="col-md-4 mb-3">
-      <label for="validationDefault01">First name: </label>
+      <label for="validationDefault01">First Name: </label>
       <input type="text" class="form-control" id="validationDefault01" name="firstName"
              placeholder="John" required>
     </div>
     <div class="col-md-4 mb-3">
-      <label for="validationDefault02">Last name: </label>
+      <label for="validationDefault02">Last Name: </label>
       <input type="text" class="form-control" id="validationDefault02" name="lastName"
              placeholder="Johnson" required>
     </div>
@@ -29,7 +30,8 @@
   <div class="form-row">
     <div class="col-md-4 mb-3">
       <label for="exampleInputEmail1">Email: </label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+      <input type="email" class="form-control" id="exampleInputEmail1"
+             aria-describedby="emailHelp"
              name="email"
              placeholder="Enter email" required>
       <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
@@ -49,8 +51,8 @@
   </div>
   <div class="form-row">
     <div class="form-group col-md-4 mb-3">
-      <label for="inputState">Gender</label>
-      <select id="inputState" class="form-control" name="gender">
+      <label for="inputGender">Gender</label>
+      <select id="inputGender" class="form-control" name="gender">
         <option th:value="'MALE'" th:text="Male"></option>
         <option th:value="'FEMALE'" th:text="Female"></option>
         <option th:value="'DIVERSE'" th:text="Diverse"></option>
@@ -70,12 +72,12 @@
 
   <div class="form-row">
     <div class="col-md-4 mb-3">
-      <label for="validationDefault10">Smoker: </label>
+      <label for="validationDefault10">Smoker:</label>
       <input type="text" class="form-control" id="validationDefault10" name="smoker"
              placeholder="No" required>
     </div>
     <div class="col-md-4 mb-3">
-      <label for="validationDefault11">Pregnant: </label>
+      <label for="validationDefault11">Pregnant:</label>
       <input type="text" class="form-control" id="validationDefault11" name="pregnant"
              placeholder="No" required>
     </div>
@@ -84,8 +86,49 @@
       <input type="text" class="form-control" id="validationDefault12" name="additionalInfo"
              placeholder="Any useful Comment for the Doctor" required>
     </div>
-
   </div>
+
+  <div th:each="contact, itemStat : *{contacts}">
+    <div class="form-row">
+      <div class="col-md-4 mb-3">
+        <label for="inputAddress">Address: </label>
+        <input type="text" class="form-control" id="inputAddress"
+               th:field="*{contacts[__${itemStat.index}__].address}"
+               name="address"
+               placeholder="1234 Main St">
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="inputAddress2">Address details: </label>
+        <input type="text" class="form-control" id="inputAddress2"
+               th:field="*{contacts[__${itemStat.index}__].address2}"
+               name="address2"
+               placeholder="Apartment, studio, or floor">
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="inputCity">City:</label>
+        <input type="text" class="form-control" id="inputCity"
+               th:field="*{contacts[__${itemStat.index}__].city}" name="city">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-4 mb-3">
+        <label for="inputState">State:</label>
+        <input type="text" class="form-control" id="inputState"
+               th:field="*{contacts[__${itemStat.index}__].state}" name="state">
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="inputZip">Zip:</label>
+        <input type="text" class="form-control" id="inputZip"
+               th:field="*{contacts[__${itemStat.index}__].zip}" name="zip">
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="inputCountry">Country:</label>
+        <input type="text" class="form-control" id="inputCountry"
+               th:field="*{contacts[__${itemStat.index}__].country}" name="country">
+      </div>
+    </div>
+  </div>
+
   <button type="submit" value="submitSignUp" class="btn btn-primary">Register</button>
 </form>
 </body>

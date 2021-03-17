@@ -171,8 +171,8 @@
     <div class="card text-white bg-info mostly-customized-scrollbar">
       <div class="card-body">
         <h5 class="card-title"
-            th:text="'PreviousIllness List'"></h5>
-        <p class="card-text">Below you can see PreviousIllness List.</p>
+            th:text="'Illness List'"></h5>
+        <p class="card-text">Below you can see Illness List.</p>
       </div>
 
       <ul class="list-group list-group-flush">
@@ -180,7 +180,7 @@
         <table>
           <tbody>
           <tr th:if="${previousIllnesses.empty}">
-            <td colspan="2"> No PreviousIllnesses are Known</td>
+            <td colspan="2"> No Illnesses Known</td>
           </tr>
           <tr th:each="previousIllness : ${previousIllnesses}">
             <td class="list-group-item overview-card-info">

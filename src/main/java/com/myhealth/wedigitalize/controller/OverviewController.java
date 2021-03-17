@@ -1,6 +1,7 @@
 package com.myhealth.wedigitalize.controller;
 
 import com.myhealth.wedigitalize.medication.repository.MedicationRepository;
+import com.myhealth.wedigitalize.patient.Contact;
 import com.myhealth.wedigitalize.patient.Patient;
 import com.myhealth.wedigitalize.patient.repository.AllergyRepository;
 import com.myhealth.wedigitalize.patient.repository.ContactRepository;
@@ -102,7 +103,8 @@ public class OverviewController {
   }
 
   @GetMapping(path = "/signup")
-  public String getPatientForm() {
+  public String getPatientForm(Model model, Patient patient, Contact contact) {
+    model.addAttribute("contacts", patient.getContacts().add(contact));
     return "registration";
   }
 

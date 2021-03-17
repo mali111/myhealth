@@ -60,14 +60,24 @@ public class MyhealthApplication extends SpringBootServletInitializer {
               "Musk",
               "01526548654",
               "justinemusk@gmail.com",
-              "39 Nichols Lane" + "Brooklyn, NY 11201");
+              "39 Nichols Lane" + "Brooklyn, NY 11201",
+              "",
+              "",
+              "",
+              "",
+              "");
       Contact contact2 =
           new Contact(
               "Talulah ",
               "Riley",
               "015265445",
               "talulahriley@hotmail.com",
-              "1 Big Rock Cove Ave." + "New York, NY 10034");
+              "1 Big Rock Cove Ave." + "",
+              "",
+              "New York",
+              "",
+              " NY 10034",
+              "USA");
 
       patient1.getContacts().add(contact);
       patient1.getContacts().add(contact2);
